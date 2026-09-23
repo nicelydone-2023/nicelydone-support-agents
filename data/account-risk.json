@@ -1,0 +1,50 @@
+[
+  {
+    "accountName": "Acme Corp",
+    "plan": "Growth",
+    "usage": {
+      "percentOfPlanLimit": 82,
+      "monthlyActiveUsers": 340,
+      "trendVsLastMonth": "+6%"
+    },
+    "openTickets": 4,
+    "renewalDate": "2026-11-01",
+    "lastQbrDate": "2026-06-20",
+    "expected": {
+      "riskLevel": "medium",
+      "reason": "Healthy usage growth but a rising ticket count and no QBR in over 90 days."
+    }
+  },
+  {
+    "accountName": "Northstar Health",
+    "plan": "Enterprise",
+    "usage": {
+      "percentOfPlanLimit": 45,
+      "monthlyActiveUsers": 190,
+      "trendVsLastMonth": "-12%"
+    },
+    "openTickets": 1,
+    "renewalDate": "2027-01-15",
+    "lastQbrDate": "2026-08-30",
+    "expected": {
+      "riskLevel": "low",
+      "reason": "Usage dip is within seasonal norms and the account is well-engaged with a recent QBR and minimal support load."
+    }
+  },
+  {
+    "accountName": "Brightline Retail",
+    "plan": "Growth",
+    "usage": {
+      "percentOfPlanLimit": 97,
+      "monthlyActiveUsers": 512,
+      "trendVsLastMonth": "+2%"
+    },
+    "openTickets": 7,
+    "renewalDate": "2026-10-20",
+    "lastQbrDate": "2026-04-05",
+    "expected": {
+      "riskLevel": "high",
+      "reason": "Near plan capacity, high open-ticket volume, renewal within 60 days, and no QBR in over 5 months."
+    }
+  }
+]

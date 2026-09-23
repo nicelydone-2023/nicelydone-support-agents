@@ -1,0 +1,32 @@
+[
+  {
+    "id": "release-001",
+    "title": "API Pagination Update",
+    "technicalChange": "Replaced offset-based pagination on the /v2/orders and /v2/customers endpoints with cursor-based pagination using a next_cursor token. The page and per_page query parameters are deprecated but still supported until Q1 2027.",
+    "releaseDate": "2026-09-10",
+    "expected": {
+      "customerSummary": "Fetching large lists of orders or customers through the API is now faster and more reliable, especially for accounts with tens of thousands of records. Existing integrations will keep working, but we recommend migrating to the new cursor-based pagination before Q1 2027.",
+      "internalSummary": "Offset pagination caused slow queries on large tables due to repeated OFFSET scans. Cursor pagination uses an indexed next_cursor token instead. Old params remain supported via a compatibility shim; sunset date is tracked in the deprecations board."
+    }
+  },
+  {
+    "id": "release-002",
+    "title": "Dashboard Filters Overhaul",
+    "technicalChange": "Added multi-select filtering by status, owner, and tag on the main dashboard list view, with filter state now persisted in the URL query string so filtered views can be bookmarked and shared.",
+    "releaseDate": "2026-09-12",
+    "expected": {
+      "customerSummary": "You can now filter your dashboard by multiple statuses, owners, or tags at once, and share a filtered view with teammates just by sending them the link.",
+      "internalSummary": "Filter state moved from local component state into URL query params via the router. Support should note that saved filter links are shareable across accounts on the same workspace, but not across workspaces."
+    }
+  },
+  {
+    "id": "release-003",
+    "title": "Single Sign-On (SSO) Support",
+    "technicalChange": "Added SAML 2.0-based SSO support for Enterprise plan workspaces, configurable from Workspace Settings > Security. Supports Okta, Azure AD, and Google Workspace as identity providers.",
+    "releaseDate": "2026-09-15",
+    "expected": {
+      "customerSummary": "Enterprise workspaces can now enable single sign-on so your team logs in through your existing identity provider (Okta, Azure AD, or Google Workspace) instead of a separate password.",
+      "internalSummary": "SSO is gated to the Enterprise plan tier via the feature-flag service. Common support issue to expect: SAML assertion mismatches when the customer's IdP clock is out of sync - check assertion timestamps first."
+    }
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "case-001",
+    "subject": "Login failure - invalid password error",
+    "ticketText": "I've been trying to log into my account for the past hour. Every time I enter my password, I get an 'Invalid credentials' error, even after resetting it twice. I'm locked out of a client presentation that starts in 20 minutes.",
+    "submittedAt": "2026-09-14T08:12:00Z",
+    "accountName": "Acme Corp",
+    "expected": {
+      "category": "login_failure",
+      "severity": "medium",
+      "owner": "identity-team",
+      "nextAction": "Verify the account isn't locked from repeated failed attempts, force a password reset, and confirm MFA settings are not blocking login."
+    }
+  },
+  {
+    "id": "case-002",
+    "subject": "Duplicate charge on October invoice",
+    "ticketText": "Our finance team flagged that invoice #INV-10456 was charged twice to our corporate card on the same day. Both charges show the identical invoice number and amount ($2,450.00). We need one of them reversed immediately.",
+    "submittedAt": "2026-09-15T14:47:00Z",
+    "accountName": "Northstar Health",
+    "expected": {
+      "category": "duplicate_invoice",
+      "severity": "high",
+      "owner": "billing-team",
+      "nextAction": "Confirm the duplicate charge in the payment processor, issue a refund for the second charge, and flag the billing run that caused it."
+    }
+  },
+  {
+    "id": "case-003",
+    "subject": "Dashboard completely down for all users",
+    "ticketText": "Everything is broken. Every user in our organization is getting a blank white screen when they try to load the dashboard. This has been going on for over 30 minutes and we have no ETA.",
+    "submittedAt": "2026-09-16T09:03:00Z",
+    "accountName": "Brightline Retail",
+    "expected": {
+      "category": "service_outage",
+      "severity": "critical",
+      "owner": "infra-team",
+      "nextAction": "Page the on-call engineer, check recent deploys for a regression, and post a status page update within 10 minutes."
+    }
+  }
+]
