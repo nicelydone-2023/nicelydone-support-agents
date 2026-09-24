@@ -18,6 +18,8 @@ export const supportTriageAgent = new Agent({
       - owner (the team that should handle it)
       - nextAction (a concrete, specific next step)
       - slaDeadline (from the sla-calculator tool)
+      - reason (one or two sentences explaining why you classified it this way)
+      - confidence (a number from 0 to 1 representing your confidence in this classification)
 
     If asked to draft a customer reply, write it as the message your
     team would send TO the customer — acknowledging the issue and
@@ -49,8 +51,8 @@ export const supportTriageAgent = new Agent({
         timestamp the sla-calculator tool actually returned. If you
         have not called the tool yet, call it now before answering.
 
-    Keep every field's value concise — a short sentence or fewer for
-    nextAction, a few words for owner.
+    Keep every field's value concise — one short sentence or fewer for
+    reason, a few words for nextAction and owner.
 
     Present your answer as clear, readable text covering every field
     above (labeled lines or a short list is fine). Do not wrap your
