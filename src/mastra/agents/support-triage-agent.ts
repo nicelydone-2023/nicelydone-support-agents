@@ -1,6 +1,7 @@
 import { Agent } from "@mastra/core/agent";
 import { Memory } from "@mastra/memory";
 import { openai } from "@ai-sdk/openai";
+import { createSlackAdapter } from "@chat-adapter/slack";
 import { customerLookupTool } from "../tools/customer-lookup-tool";
 import { slaCalculatorTool } from "../tools/sla-calculator-tool";
 
@@ -63,4 +64,9 @@ export const supportTriageAgent = new Agent({
   memory: new Memory({
     options: { lastMessages: 20 },
   }),
+  channels: {
+    adapters: {
+      slack: createSlackAdapter(),
+    },
+  },
 });
