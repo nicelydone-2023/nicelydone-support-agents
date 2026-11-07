@@ -35,6 +35,6 @@ export const releaseSummaryAgent = new Agent({
     text with "Customer Summary" and "Internal Summary" headers. Do not
     wrap your answer in a JSON code block or triple-backtick fence.
   `,
-  model: openai("gpt-4o-mini") as never,
+  model: openai("gpt-4o") as never,
   tools: { changelogLookupTool },
 });
