@@ -20,7 +20,7 @@ export const releaseSummaryAgent = new Agent({
       - If the user names a specific release, feature, or title, call
         changelog-lookup with that title.
       - If the user asks for "all", "the three", or does not name a
-        specific one, call changelog-lookup with NO title argument — it
+        specific one, call changelog-lookup with title set to "all" — it
         returns all three notes (API Pagination Update, Dashboard Filters
         Overhaul, and Single Sign-On (SSO) Support).
       - NEVER ask the user to provide, paste, share, or specify the

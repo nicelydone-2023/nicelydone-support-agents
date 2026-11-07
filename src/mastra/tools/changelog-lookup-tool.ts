@@ -9,9 +9,8 @@ export const changelogLookupTool = createTool({
   inputSchema: z.object({
     title: z
       .string()
-      .optional()
       .describe(
-        "Optional release title to filter by, e.g. 'API Pagination Update'",
+        "Release title to filter by, e.g. 'API Pagination Update'. Pass 'all' to return every release note.",
       ),
   }),
   outputSchema: z.array(
@@ -24,7 +23,7 @@ export const changelogLookupTool = createTool({
   ),
   execute: async ({ title }) => {
     const notes = releaseNotes.map(({ expected, ...rest }) => rest);
-    if (!title) return notes;
+    if (!title || title.trim().toLowerCase() === "all") return notes;
     return notes.filter((n) =>
       n.title.toLowerCase().includes(title.toLowerCase()),
     );
